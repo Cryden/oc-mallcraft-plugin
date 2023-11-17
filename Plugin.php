@@ -90,10 +90,11 @@ class Plugin extends PluginBase
     {
         return [
             'settings' => [
-                'label' => 'Setings',
+                'label' => 'Settings',
                 'description' => 'Manage plugin settings.',
                 'category' => 'MallCraft',
-                'icon' => 'icon-globe',
+                'icon' => 'icon-cogs',
+                'iconSvg' => 'plugins/crydesign/mallcraft/assets/images/settings.svg',
                 'class' => \Crydesign\Mallcraft\Models\Setting::class,
                 'order' => 500,
             ]
