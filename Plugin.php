@@ -1,4 +1,6 @@
-<?php namespace Crydesign\Mallcraft;
+<?php
+
+namespace Crydesign\Mallcraft;
 
 use Backend;
 use System\Classes\PluginBase;
@@ -81,6 +83,20 @@ class Plugin extends PluginBase
                 'permissions' => ['crydesign.mallcraft.*'],
                 'order' => 500,
             ],
+        ];
+    }
+
+    public function registerSettings()
+    {
+        return [
+            'settings' => [
+                'label' => 'Setings',
+                'description' => 'Manage plugin settings.',
+                'category' => 'MallCraft',
+                'icon' => 'icon-globe',
+                'class' => \Crydesign\Mallcraft\Models\Setting::class,
+                'order' => 500,
+            ]
         ];
     }
 }

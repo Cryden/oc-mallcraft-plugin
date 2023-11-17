@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Product
+
+# Model Form Field configuration
+form: $/crydesign/mallcraft/models/product/fields.yaml
+
+# Model Class name
+modelClass: Crydesign\Mallcraft\Models\Product
+
+# Default redirect location
+defaultRedirect: crydesign/mallcraft/products
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: crydesign/mallcraft/products/update/:id
+    redirectClose: crydesign/mallcraft/products
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: crydesign/mallcraft/products
+    redirectClose: crydesign/mallcraft/products
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

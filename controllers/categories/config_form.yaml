@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/crydesign/mallcraft/models/category/fields.yaml
+
+# Model Class name
+modelClass: Crydesign\Mallcraft\Models\Category
+
+# Default redirect location
+defaultRedirect: crydesign/mallcraft/categories
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: crydesign/mallcraft/categories/update/:id
+    redirectClose: crydesign/mallcraft/categories
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: crydesign/mallcraft/categories
+    redirectClose: crydesign/mallcraft/categories
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title
