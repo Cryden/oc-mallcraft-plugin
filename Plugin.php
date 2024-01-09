@@ -73,15 +73,22 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
-
         return [
             'mallcraft' => [
-                'label' => 'mallcraft',
+                'label' => 'MallCraft',
                 'url' => Backend::url('crydesign/mallcraft/mycontroller'),
                 'icon' => 'icon-leaf',
+                'iconSvg' => 'plugins/crydesign/mallcraft/assets/images/logo.svg',
                 'permissions' => ['crydesign.mallcraft.*'],
                 'order' => 500,
+                'sideMenu' => [
+                    'settings' => [
+                        'label'         => 'Settings',
+                        'icon'          => 'icon-file-text-o',
+                        'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/settings.svg',
+                        'url'           => Backend::url('crydesign/wikix/articles'),
+                    ],
+                ]
             ],
         ];
     }
