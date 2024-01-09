@@ -82,11 +82,34 @@ class Plugin extends PluginBase
                 'permissions' => ['crydesign.mallcraft.*'],
                 'order' => 500,
                 'sideMenu' => [
+                    '_section_shop' => [
+                        'itemType' => 'section',
+                        'label' => 'nav.shop',
+                    ],
+                    'categories' => [
+                        'label'         => 'nav.categories',
+                        'icon'          => 'icon-file-text-o',
+                        'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/categories.svg',
+                        'url'           => Backend::url('crydesign/mallcraft/settings/update/crydesign/mallcraft/settings'),
+                    ],
+                    'products' => [
+                        'label'         => 'nav.products',
+                        'icon'          => 'icon-file-text-o',
+                        'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/products.svg',
+                        'url'           => Backend::url('crydesign/mallcraft/settings/update/crydesign/mallcraft/settings'),
+                    ],
+                    '_ruler_settings' => [
+                        'itemType' => 'ruler',
+                    ],
+                    '_section_settings' => [
+                        'itemType' => 'section',
+                        'label' => 'nav.settings',
+                    ],
                     'settings' => [
-                        'label'         => 'Settings',
+                        'label'         => 'nav.shop',
                         'icon'          => 'icon-file-text-o',
                         'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/settings.svg',
-                        'url'           => Backend::url('crydesign/wikix/articles'),
+                        'url'           => Backend::url('crydesign/mallcraft/settings/update/crydesign/mallcraft/settings'),
                     ],
                 ]
             ],
@@ -104,6 +127,7 @@ class Plugin extends PluginBase
                 'iconSvg' => 'plugins/crydesign/mallcraft/assets/images/settings.svg',
                 'class' => \Crydesign\Mallcraft\Models\Setting::class,
                 'order' => 500,
+                'context' => 'mysettings'
             ]
         ];
     }
