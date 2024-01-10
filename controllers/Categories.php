@@ -1,4 +1,6 @@
-<?php namespace Crydesign\Mallcraft\Controllers;
+<?php
+
+namespace Crydesign\Mallcraft\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
@@ -38,5 +40,12 @@ class Categories extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Crydesign.Mallcraft', 'mallcraft', 'categories');
+    }
+
+    public function listInjectRowClass($record, $definition = null)
+    {
+        if (!$record->active) {
+            return 'safe';
+        }
     }
 }

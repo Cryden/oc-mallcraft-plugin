@@ -9,7 +9,7 @@ list: $/crydesign/mallcraft/models/category/columns.yaml
 modelClass: Crydesign\Mallcraft\Models\Category
 
 # List Title
-title: Manage Categories
+title: categories.list.title
 
 # Link URL for each record
 recordUrl: crydesign/mallcraft/categories/update/:id
@@ -45,3 +45,9 @@ toolbar:
     # Search widget configuration
     search:
         prompt: backend::lang.list.search_prompt
+
+structure:
+    showTree: true
+    treeExpanded: false
+    showReorder: true
+    maxDepth: 10

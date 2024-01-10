@@ -6,3 +6,13 @@ columns:
     id:
         label: ID
         searchable: true
+        sortable: false
+        width: 5%
+    name:
+        label: categories.name
+        searchable: true
+        sortable: false
+    slug:
+        label: categories.slug
+        searchable: true
+        sortable: false

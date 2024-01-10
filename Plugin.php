@@ -90,13 +90,13 @@ class Plugin extends PluginBase
                         'label'         => 'nav.categories',
                         'icon'          => 'icon-file-text-o',
                         'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/categories.svg',
-                        'url'           => Backend::url('crydesign/mallcraft/settings/update/crydesign/mallcraft/settings'),
+                        'url'           => Backend::url('crydesign/mallcraft/categories'),
                     ],
                     'products' => [
                         'label'         => 'nav.products',
                         'icon'          => 'icon-file-text-o',
                         'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/products.svg',
-                        'url'           => Backend::url('crydesign/mallcraft/settings/update/crydesign/mallcraft/settings'),
+                        'url'           => Backend::url('crydesign/mallcraft/products'),
                     ],
                     '_ruler_settings' => [
                         'itemType' => 'ruler',

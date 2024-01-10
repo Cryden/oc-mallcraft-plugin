@@ -3,6 +3,46 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    active:
+        label: categories.active
+        type: switch
+        span: full
+    name:
+        label: categories.name
+        type: text
+        span: left
+        required: true
+    slug:
+        label: categories.slug
+        type: text
+        span: right
+        required: true
+        preset:
+            field: name
+            type: slug
+tabs:
+    fields:
+        parent:
+            label: categories.parent
+            type: relation
+            nameFrom: name
+            tab: categories.tab.settings
+        code:
+            label: categories.code
+            type: text
+            span: left
+            comment: categories.code.comment
+            tab: categories.tab.settings
+        external_id:
+            label: categories.external_id
+            type: text
+            span: right
+            tab: categories.tab.settings
+        preview_text:
+            label: categories.preview_text
+            type: textarea
+            tab: categories.tab.content
+        description:
+            label: categories.description
+            type: richeditor
+            tab: categories.tab.content

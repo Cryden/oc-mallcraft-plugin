@@ -2,5 +2,18 @@
     "nav.settings": "Настройки",
     "nav.shop": "Магазин",
     "nav.categories": "Категории",
-    "nav.products": "Продукты"
+    "nav.products": "Продукты",
+    "categories.list.title": "Категории",
+    "categories.list.create_button": "Создать",
+    "categories.tab.settings": "Настройки",
+    "categories.tab.content": "Контент",
+    "categories.active": "Активна",
+    "categories.name": "Название",
+    "categories.slug": "Ссылка",
+    "categories.parent": "Родительская категория",
+    "categories.code": "Код",
+    "categories.code.comment": "Этот код может быть использован для идентификации этой категории в части внешнего интерфейса",
+    "categories.preview_text": "Краткое описание",
+    "categories.description": "Описание",
+    "categories.external_id": "Внешний ID"
 }

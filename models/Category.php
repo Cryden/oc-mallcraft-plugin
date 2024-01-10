@@ -1,23 +1,36 @@
-<?php namespace Crydesign\Mallcraft\Models;
+<?php
+
+namespace Crydesign\Mallcraft\Models;
 
 use Model;
 
-/**
- * Category Model
- *
- * @link https://docs.octobercms.com/3.x/extend/system/models.html
- */
+use October\Rain\Database\Traits\Sluggable;
+use October\Rain\Database\Traits\Validation;
+use October\Rain\Database\Traits\NestedTree;
+
 class Category extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
+    use Sluggable;
+    use Validation;
+    use NestedTree;
 
-    /**
-     * @var string table name
-     */
     public $table = 'crydesign_mallcraft_categories';
 
-    /**
-     * @var array rules for validation
-     */
-    public $rules = [];
+    public $implement = [
+        '@RainLab.Translate.Behaviors.TranslatableModel',
+    ];
+
+    public $translatable = [
+        'name',
+        ['slug', 'index' => true],
+        'preview_text',
+        'description'
+    ];
+
+    public $rules = [
+        'name' => 'required',
+        'slug' => 'required|unique:crydesign_mallcraft_categories',
+    ];
+
+    public $slugs = ['slug' => 'name'];
 }

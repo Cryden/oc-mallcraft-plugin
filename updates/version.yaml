@@ -1,1 +1,6 @@
-v1.0.1: First version of mallcraft
+v1.0.1:
+    - First version of mallcraft
+v1.0.2:
+    - Add Categories and Products
+    - create_categories_table.php
+    - create_products_table.php

@@ -1,4 +1,6 @@
-<?php namespace Crydesign\Mallcraft\Updates;
+<?php
+
+namespace Crydesign\Mallcraft\Updates;
 
 use Schema;
 use October\Rain\Database\Schema\Blueprint;
@@ -16,9 +18,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('crydesign_mallcraft_products', function(Blueprint $table) {
-            $table->id();
+        Schema::create('crydesign_mallcraft_products', function (Blueprint $table) {
+            $table->increments('id')->unsigned();
+            $table->boolean('active')->default(0);
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->integer('category_id')->nullable()->unsigned();
+            $table->string('external_id')->nullable();
+            $table->string('code')->nullable();
+            $table->text('preview_text')->nullable();
+            $table->text('description')->nullable();
+            $table->softDeletes();
             $table->timestamps();
+
+            $table->index('name');
+            $table->index('code');
+            $table->index('external_id');
+            $table->index('category_id');
         });
     }
 
