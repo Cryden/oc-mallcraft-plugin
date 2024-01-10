@@ -6,3 +6,19 @@ columns:
     id:
         label: ID
         searchable: true
+        sortable: true
+        width: 5%
+    name:
+        label: products.name
+        searchable: true
+        sortable: true
+    slug:
+        label: products.slug
+        searchable: true
+        sortable: true
+    category:
+        label: products.category
+        relation: category
+        valueFrom: name
+        searchable: true
+        sortable: true

@@ -31,18 +31,18 @@ tabs:
             label: categories.code
             type: text
             span: left
-            comment: categories.code.comment
             tab: categories.tab.settings
         external_id:
             label: categories.external_id
             type: text
             span: right
+            comment: categories.external_id.comment
             tab: categories.tab.settings
         preview_text:
             label: categories.preview_text
             type: textarea
-            tab: categories.tab.content
+            tab: categories.tab.description
         description:
             label: categories.description
             type: richeditor
-            tab: categories.tab.content
+            tab: categories.tab.description

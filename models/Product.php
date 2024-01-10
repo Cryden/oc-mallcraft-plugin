@@ -1,6 +1,11 @@
-<?php namespace Crydesign\Mallcraft\Models;
+<?php
+
+namespace Crydesign\Mallcraft\Models;
 
 use Model;
+
+use October\Rain\Database\Traits\Sluggable;
+use October\Rain\Database\Traits\Validation;
 
 /**
  * Product Model
@@ -9,15 +14,30 @@ use Model;
  */
 class Product extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
+    use Sluggable;
+    use Validation;
 
-    /**
-     * @var string table name
-     */
     public $table = 'crydesign_mallcraft_products';
 
-    /**
-     * @var array rules for validation
-     */
-    public $rules = [];
+    public $implement = [
+        '@RainLab.Translate.Behaviors.TranslatableModel',
+    ];
+
+    public $translatable = [
+        'name',
+        ['slug', 'index' => true],
+        'preview_text',
+        'description'
+    ];
+
+    public $rules = [
+        'name' => 'required',
+        'slug' => 'required|unique:crydesign_mallcraft_categories',
+    ];
+
+    public $slugs = ['slug' => 'name'];
+
+    public $belongsTo = [
+        'category' => [Category::class],
+    ];
 }

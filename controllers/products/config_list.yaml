@@ -9,7 +9,7 @@ list: $/crydesign/mallcraft/models/product/columns.yaml
 modelClass: Crydesign\Mallcraft\Models\Product
 
 # List Title
-title: Manage Products
+title: products.list.title
 
 # Link URL for each record
 recordUrl: crydesign/mallcraft/products/update/:id

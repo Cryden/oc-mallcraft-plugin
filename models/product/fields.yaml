@@ -3,6 +3,47 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: products.name
+        type: text
+        span: left
+        required: true
+    slug:
+        label: products.slug
+        type: text
+        span: right
+        required: true
+        preset:
+            field: name
+            type: slug
+    active:
+        label: products.active
+        type: switch
+        span: full
+        comment: products.active.comment
+tabs:
+    fields:
+        category:
+            label: products.category
+            type: relation
+            nameFrom: name
+            tab: products.tab.settings
+        code:
+            label: products.code
+            type: text
+            span: left
+            tab: products.tab.settings
+        external_id:
+            label: products.external_id
+            type: text
+            span: right
+            tab: products.tab.settings
+            comment: products.external_id.comment
+        preview_text:
+            label: products.preview_text
+            type: textarea
+            tab: products.tab.description
+        description:
+            label: products.description
+            type: richeditor
+            tab: products.tab.description
