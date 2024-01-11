@@ -109,7 +109,7 @@ class Plugin extends PluginBase
                         'label'         => 'nav.shop',
                         'icon'          => 'icon-file-text-o',
                         'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/settings.svg',
-                        'url'           => Backend::url('crydesign/mallcraft/settings/update/crydesign/mallcraft/settings'),
+                        'url'           => Backend::url('crydesign/mallcraft/settings'),
                     ],
                 ]
             ],
@@ -127,7 +127,18 @@ class Plugin extends PluginBase
                 'iconSvg' => 'plugins/crydesign/mallcraft/assets/images/settings.svg',
                 'class' => \Crydesign\Mallcraft\Models\Setting::class,
                 'order' => 500,
-                'context' => 'mysettings'
+                'context' => 'mall_settings',
+                'url' => 'settings/update/crydesign/mallcraft/settings'
+            ],
+            'product' => [
+                'label' => 'Product',
+                'description' => 'Manage product settings.',
+                'category' => 'MallCraft',
+                'icon' => 'icon-cogs',
+                'iconSvg' => 'plugins/crydesign/mallcraft/assets/images/products.svg',
+                'order' => 500,
+                'context' => 'mall_settings',
+                'url' => Backend::url('crydesign/mallcraft/products')
             ]
         ];
     }
