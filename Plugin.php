@@ -101,12 +101,8 @@ class Plugin extends PluginBase
                     '_ruler_settings' => [
                         'itemType' => 'ruler',
                     ],
-                    '_section_settings' => [
-                        'itemType' => 'section',
-                        'label' => 'nav.settings',
-                    ],
                     'settings' => [
-                        'label'         => 'nav.shop',
+                        'label'         => 'nav.settings',
                         'icon'          => 'icon-file-text-o',
                         'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/settings.svg',
                         'url'           => Backend::url('crydesign/mallcraft/settings'),
