@@ -1,0 +1,13 @@
+# config_import_export.yaml
+import:
+    title: Import subscribers
+    modelClass: Crydesign\Mallcraft\Models\CategoryImport
+    list: $/crydesign/mallcraft/models/category/import_columns.yaml
+    redirect: crydesign/mallcraft/categories
+
+export:
+    title: Export subscribers
+    modelClass: Crydesign\Mallcraft\Models\CategoryExport
+    list: $/crydesign/mallcraft/models/category/export_columns.yaml
+    redirect: crydesign/mallcraft/categories
+    fileName: categories

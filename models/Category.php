@@ -20,6 +20,16 @@ class Category extends Model
         '@RainLab.Translate.Behaviors.TranslatableModel',
     ];
 
+    public $fillable = [
+        'active',
+        'name',
+        'slug',
+        'parent_id',
+        'external_id',
+        'preview_text',
+        'description',
+    ];
+
     public $translatable = [
         'name',
         ['slug', 'index' => true],
