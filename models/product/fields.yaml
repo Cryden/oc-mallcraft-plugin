@@ -47,3 +47,8 @@ tabs:
             label: products.description
             type: richeditor
             tab: products.tab.description
+        price:
+            label: Prices and Stock
+            tab: Prices and Stock
+            type: partial
+            path: ~/plugins/crydesign/mallcraft/controllers/products/_prices_and_stocks.htm

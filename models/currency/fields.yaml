@@ -21,6 +21,7 @@ fields:
         label: Код
         type: text
         span: left
+        required: true
 
     symbol:
         label: Символ

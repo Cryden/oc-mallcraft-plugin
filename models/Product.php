@@ -40,4 +40,18 @@ class Product extends Model
     public $belongsTo = [
         'category' => [Category::class],
     ];
+
+    public $morphOne = [
+        'quantity' => [
+            Stock::class,
+            'name'       => 'item',
+        ],
+    ];
+
+    public $morphMany = [
+        'prices' => [
+            Price::class,
+            'name'       => 'item',
+        ],
+    ];
 }

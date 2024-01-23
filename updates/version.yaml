@@ -7,3 +7,9 @@ v1.0.2:
 v.1.0.3:
     - Add Currencies
     - create_currencies_table.php
+v1.0.4:
+    - Add Prices
+    - create_prices_table.php
+v1.0.5:
+    - Add Stocks
+    - create_stocks_table.php
