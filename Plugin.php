@@ -126,15 +126,15 @@ class Plugin extends PluginBase
                 'context' => 'mall_settings',
                 'url' => 'settings/update/crydesign/mallcraft/settings'
             ],
-            'product' => [
-                'label' => 'Product',
-                'description' => 'Manage product settings.',
+            'currencies' => [
+                'label' => 'Currency',
+                'description' => 'Manage currency settings.',
                 'category' => 'MallCraft',
-                'icon' => 'icon-cogs',
+                'icon' => 'icon-dollar',
                 'iconSvg' => 'plugins/crydesign/mallcraft/assets/images/products.svg',
                 'order' => 500,
                 'context' => 'mall_settings',
-                'url' => Backend::url('crydesign/mallcraft/products')
+                'url' => Backend::url('crydesign/mallcraft/currencies')
             ]
         ];
     }

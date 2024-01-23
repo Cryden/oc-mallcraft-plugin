@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Currency
+
+# Model Form Field configuration
+form: $/crydesign/mallcraft/models/currency/fields.yaml
+
+# Model Class name
+modelClass: Crydesign\Mallcraft\Models\Currency
+
+# Default redirect location
+defaultRedirect: crydesign/mallcraft/currencies
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: crydesign/mallcraft/currencies/update/:id
+    redirectClose: crydesign/mallcraft/currencies
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: crydesign/mallcraft/currencies
+    redirectClose: crydesign/mallcraft/currencies
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

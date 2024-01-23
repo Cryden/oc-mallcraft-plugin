@@ -4,3 +4,6 @@ v1.0.2:
     - Add Categories and Products
     - create_categories_table.php
     - create_products_table.php
+v.1.0.3:
+    - Add Currencies
+    - create_currencies_table.php
