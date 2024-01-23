@@ -3,6 +3,37 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    active:
+        label: Активна
+        type: switch
+        span: left
+
+    is_default:
+        label: Использовать по умолчанию
+        type: switch
+        span: right
+
+    name:
+        label: Название
+        type: text
+
+    code:
+        label: Код
+        type: text
+        span: left
+
+    symbol:
+        label: Символ
+        type: text
+        span: right
+
+    rate:
+        label: Курс
+        span: left
+        type: number
+        default: 1
+
+    external_id:
+        label: Внешний ID
+        span: right
+

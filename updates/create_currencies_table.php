@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('code')->unique();
             $table->string('symbol');
-            $table->decimal('rate');
+            $table->decimal('rate')->default(1);
             $table->string('external_id')->nullable();
             $table->integer('sort_order')->nullable();
             $table->softDeletes();

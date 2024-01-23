@@ -6,3 +6,21 @@ columns:
     id:
         label: ID
         searchable: true
+
+    name:
+        label: Название
+        type: text
+
+    code:
+        label: Код
+        type: text
+        span: left
+
+    symbol:
+        label: Символ
+        type: text
+        span: right
+
+    rate:
+        label: Курс
+        span: left
