@@ -7,6 +7,7 @@ use Model;
 use October\Rain\Database\Traits\Sluggable;
 use October\Rain\Database\Traits\Validation;
 use October\Rain\Database\Traits\NestedTree;
+use \October\Rain\Database\Traits\SortableRelation;
 
 /**
  * Category Model
@@ -34,8 +35,9 @@ class Category extends Model
     use Sluggable;
     use Validation;
     use NestedTree;
+    use SortableRelation;
 
-    public $table = 'crydesign_mallcraft_categories';
+    public $table = 'mallcraft_categories';
 
     public $implement = [
         '@RainLab.Translate.Behaviors.TranslatableModel',
@@ -68,7 +70,7 @@ class Category extends Model
     public $belongsToMany = [
         'products'          => [
             Product::class,
-            'table'    => 'crydesign_mallcraft_category_product',
+            'table'    => 'mallcraft_category_product',
             'key'      => 'category_id',
             'otherKey' => 'product_id',
             'pivot'    => ['sort_order'],
@@ -76,7 +78,7 @@ class Category extends Model
         ],
         'property_groups'   => [
             PropertyGroup::class,
-            'table'    => 'crydesign_mallcraft_category_property_group',
+            'table'    => 'mallcraft_category_property_group',
             'key'      => 'category_id',
             'otherKey' => 'property_group_id',
             'pivotSortable' => 'sort_order'

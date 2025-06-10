@@ -3,25 +3,25 @@
 namespace Crydesign\Mallcraft\Updates;
 
 use Schema;
-use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
+use October\Rain\Database\Schema\Blueprint;
 
 /**
- * CreateCategoryPropertyGroupTable Migration
+ * CreateCategoryProductTable Migration
  *
- * Creates a pivot table for the many-to-many relationship between categories and property groups
+ * Creates a pivot table for the many-to-many relationship between categories and products
  *
  * @link https://docs.octobercms.com/3.x/extend/database/structure.html
  */
 return new class extends Migration
 {
     /**
-     * Category-PropertyGroup pivot table name
+     * Category-Product pivot table name
      */
-    const TABLE_NAME = 'crydesign_mallcraft_category_property_group';
+    const TABLE_NAME = 'mallcraft_category_product';
 
     /**
-     * Creates the category-property group pivot table
+     * Creates the category-product pivot table
      *
      * @return void
      */
@@ -34,25 +34,25 @@ return new class extends Migration
         Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
+            $table->integer('product_id')->unsigned();
             $table->integer('category_id')->unsigned();
-            $table->integer('property_group_id')->unsigned();
-            $table->integer('sort_order')->unsigned()->nullable();
+            $table->integer('sort_order')->unsigned();
             $table->timestamps();
+
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('crydesign_mallcraft_products')
+                ->onDelete('cascade');
 
             $table->foreign('category_id')
                 ->references('id')
                 ->on('crydesign_mallcraft_categories')
                 ->onDelete('cascade');
-
-            $table->foreign('property_group_id')
-                ->references('id')
-                ->on('crydesign_mallcraft_property_groups')
-                ->onDelete('cascade');
         });
     }
 
     /**
-     * Drops the category-property group pivot table
+     * Drops the category-product pivot table
      *
      * @return void
      */

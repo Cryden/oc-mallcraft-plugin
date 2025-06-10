@@ -34,7 +34,7 @@ return new class extends Migration
     /**
      * Categories table name
      */
-    const TABLE_NAME = 'crydesign_mallcraft_categories';
+    const TABLE_NAME = 'mallcraft_categories';
 
     /**
      * Creates the categories table

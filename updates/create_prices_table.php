@@ -13,25 +13,26 @@ use October\Rain\Database\Updates\Migration;
  */
 return new class extends Migration
 {
+    const TABLE_NAME = 'mallcraft_prices';
     /**
      * up builds the migration
      */
     public function up()
     {
-        Schema::create('crydesign_mallcraft_prices', function (Blueprint $table) {
-            $table->increments('id')->unsigned();
-            $table->integer('item_id')->unsigned();
-            $table->string('item_type');
-            $table->decimal('price', 15, 2)->nullable();
-            $table->decimal('old_price', 15, 2)->nullable();
-            $table->integer('price_type_id')->unsigned()->nullable();
-            $table->timestamps();
+        if (Schema::hasTable(self::TABLE_NAME)) {
+            return;
+        }
 
-            $table->index('item_id');
-            $table->index('item_type');
-            $table->index('price');
-            $table->index('old_price');
-            $table->index('price_type_id');
+        Schema::create(self::TABLE_NAME, function (Blueprint $table) {
+            $table->increments('id')->unsigned();
+            $table->integer('currency_id')->unsigned();
+            $table->integer('priceable_id')->unsigned();
+            $table->string('priceable_type');
+            $table->integer('price')->nullable();
+            $table->integer('old_price')->nullable();
+            $table->integer('price_category_id')->unsigned()->nullable();
+            $table->string('field')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -40,6 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('crydesign_mallcraft_prices');
+        Schema::dropIfExists(self::TABLE_NAME);
     }
 };

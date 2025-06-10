@@ -25,6 +25,8 @@ return new class extends Migration
 
         Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->id();
+            $table->integer('product_id')->unsigned();
+            $table->string('user_defined_id')->nullable();
             $table->timestamps();
         });
     }

@@ -18,10 +18,10 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'mallcraft',
-            'description' => 'No description provided yet...',
-            'author' => 'crydesign',
-            'icon' => 'icon-leaf'
+            'name' => 'MallCraft',
+            'description' => 'E-shop for October CMS',
+            'author' => 'CRYDEsigN',
+            'icon' => 'icon-cart'
         ];
     }
 
@@ -87,11 +87,6 @@ class Plugin extends PluginBase
                         'icon' => 'icon-cube',
                         'label' => __('Catalog'),
                     ],
-                    // 'brands' => [
-                    //     'label'         => __('Brands'),
-                    //     'icon'          => 'icon-star',
-                    //     'url'           => Backend::url('crydesign/mallcraft/categories'),
-                    // ],
                     'categories' => [
                         'label'         => __('Categories'),
                         'icon'          => 'icon-list-alt',
@@ -102,55 +97,6 @@ class Plugin extends PluginBase
                         'icon'          => 'icon-file-text-o',
                         'url'           => Backend::url('crydesign/mallcraft/products'),
                     ],
-                    // '_ruler_shop' => [
-                    //     'itemType' => 'ruler',
-                    // ],
-                    // '_section_shop' => [
-                    //     'itemType' => 'section',
-                    //     'icon' => 'icon-circle',
-                    //     'label' => __('Shop'),
-                    // ],
-                    // 'offers' => [
-                    //     'label'         => __('Offers'),
-                    //     'icon'          => 'icon-cart-plus',
-                    //     'url'           => Backend::url('crydesign/mallcraft/products'),
-                    // ],
-                    // 'orders' => [
-                    //     'label'         => __('Orders'),
-                    //     'icon'          => 'icon-shopping-cart',
-                    //     'url'           => Backend::url('crydesign/mallcraft/products'),
-                    // ],
-                    // '_ruler_store' => [
-                    //     'itemType' => 'ruler',
-                    // ],
-                    // '_section_store' => [
-                    //     'itemType' => 'section',
-                    //     'icon' => 'icon-circle',
-                    //     'label' => __('Store'),
-                    // ],
-                    // 'store_orders' => [
-                    //     'label'         => __('Orders'),
-                    //     'icon'          => 'icon-cart-plus',
-                    //     'url'           => Backend::url('crydesign/mallcraft/products'),
-                    // ],
-                    // '_ruler_options' => [
-                    //     'itemType' => 'ruler',
-                    // ],
-                    // '_section_options' => [
-                    //     'itemType' => 'section',
-                    //     'icon' => 'icon-triangle',
-                    //     'label' => __('Options'),
-                    // ],
-                    // 'payment' => [
-                    //     'label'         => __('Payment'),
-                    //     'icon'          => 'icon-money',
-                    //     'url'           => Backend::url('crydesign/mallcraft/products'),
-                    // ],
-                    // 'shipping' => [
-                    //     'label'         => __('Shipping'),
-                    //     'icon'          => 'icon-car',
-                    //     'url'           => Backend::url('crydesign/mallcraft/products'),
-                    // ],
                     '_ruler_settings' => [
                         'itemType' => 'ruler',
                     ],
@@ -172,7 +118,7 @@ class Plugin extends PluginBase
                 'description' => 'Manage plugin settings.',
                 'category' => 'MallCraft',
                 'icon' => 'icon-settings',
-                'class' => \Crydesign\Mallcraft\Models\Setting::class,
+                'class' => \Crydesign\Mallcraft\Models\PluginSetting::class,
                 'order' => 500,
                 'context' => 'mall_settings',
                 'url' => 'settings/update/crydesign/mallcraft/settings'

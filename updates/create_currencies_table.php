@@ -32,7 +32,7 @@ return new class extends Migration
     /**
      * Currencies table name
      */
-    const TABLE_NAME = 'crydesign_mallcraft_currencies';
+    const TABLE_NAME = 'mallcraft_currencies';
 
     /**
      * Creates the currencies table

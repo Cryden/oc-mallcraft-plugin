@@ -1,4 +1,6 @@
-<?php namespace Crydesign\Mallcraft\Updates;
+<?php
+
+namespace Crydesign\Mallcraft\Updates;
 
 use Schema;
 use October\Rain\Database\Schema\Blueprint;
@@ -7,26 +9,61 @@ use October\Rain\Database\Updates\Migration;
 /**
  * CreatePropertiesTable Migration
  *
+ * Creates properties table for Mallcraft plugin
+ *
+ * Fields:
+ * - id: Auto-incrementing primary key
+ * - name: Property name
+ * - slug: Unique URL-friendly identifier
+ * - type: Property type (e.g. "string", "number", "boolean")
+ * - unit: Optional measurement unit
+ * - options: Optional JSON-encoded property options
+ * - created_at: Creation timestamp
+ * - updated_at: Last update timestamp
+ * - deleted_at: Soft delete timestamp
+ *
  * @link https://docs.octobercms.com/3.x/extend/database/structure.html
  */
 return new class extends Migration
 {
     /**
-     * up builds the migration
+     * Properties table name
+     */
+    const TABLE_NAME = 'mallcraft_properties';
+
+    /**
+     * Creates the properties table
+     *
+     * @return void
      */
     public function up()
     {
-        Schema::create('crydesign_mallcraft_properties', function(Blueprint $table) {
-            $table->id();
+        if (Schema::hasTable(self::TABLE_NAME)) {
+            return;
+        }
+
+        Schema::create(self::TABLE_NAME, function (Blueprint $table) {
+            $table->increments('id')->unsigned();
+            $table->string('name');
+            $table->string('slug')->unique()->nullable();
+            $table->string('type');
+            $table->string('unit')->nullable();
+            $table->text('options')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->index('name');
+            $table->index('type');
         });
     }
 
     /**
-     * down reverses the migration
+     * Drops the properties table
+     *
+     * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('crydesign_mallcraft_properties');
+        Schema::dropIfExists(self::TABLE_NAME);
     }
 };

@@ -1,4 +1,6 @@
-<?php namespace Crydesign\Mallcraft\Models;
+<?php
+
+namespace Crydesign\Mallcraft\Models;
 
 use Model;
 
@@ -14,7 +16,7 @@ class Currency extends Model
     /**
      * @var string table name
      */
-    public $table = 'crydesign_mallcraft_currencies';
+    public $table = 'mallcraft_currencies';
 
     /**
      * @var array rules for validation
