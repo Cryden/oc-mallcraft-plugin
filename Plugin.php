@@ -82,29 +82,81 @@ class Plugin extends PluginBase
                 'permissions' => ['crydesign.mallcraft.*'],
                 'order' => 500,
                 'sideMenu' => [
-                    '_section_shop' => [
+                    '_section_catalog' => [
                         'itemType' => 'section',
-                        'label' => 'nav.shop',
+                        'icon' => 'icon-cube',
+                        'label' => __('Catalog'),
                     ],
+                    // 'brands' => [
+                    //     'label'         => __('Brands'),
+                    //     'icon'          => 'icon-star',
+                    //     'url'           => Backend::url('crydesign/mallcraft/categories'),
+                    // ],
                     'categories' => [
-                        'label'         => 'nav.categories',
-                        'icon'          => 'icon-file-text-o',
-                        'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/categories.svg',
+                        'label'         => __('Categories'),
+                        'icon'          => 'icon-list-alt',
                         'url'           => Backend::url('crydesign/mallcraft/categories'),
                     ],
                     'products' => [
-                        'label'         => 'nav.products',
+                        'label'         => __('Products'),
                         'icon'          => 'icon-file-text-o',
-                        'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/products.svg',
                         'url'           => Backend::url('crydesign/mallcraft/products'),
                     ],
+                    // '_ruler_shop' => [
+                    //     'itemType' => 'ruler',
+                    // ],
+                    // '_section_shop' => [
+                    //     'itemType' => 'section',
+                    //     'icon' => 'icon-circle',
+                    //     'label' => __('Shop'),
+                    // ],
+                    // 'offers' => [
+                    //     'label'         => __('Offers'),
+                    //     'icon'          => 'icon-cart-plus',
+                    //     'url'           => Backend::url('crydesign/mallcraft/products'),
+                    // ],
+                    // 'orders' => [
+                    //     'label'         => __('Orders'),
+                    //     'icon'          => 'icon-shopping-cart',
+                    //     'url'           => Backend::url('crydesign/mallcraft/products'),
+                    // ],
+                    // '_ruler_store' => [
+                    //     'itemType' => 'ruler',
+                    // ],
+                    // '_section_store' => [
+                    //     'itemType' => 'section',
+                    //     'icon' => 'icon-circle',
+                    //     'label' => __('Store'),
+                    // ],
+                    // 'store_orders' => [
+                    //     'label'         => __('Orders'),
+                    //     'icon'          => 'icon-cart-plus',
+                    //     'url'           => Backend::url('crydesign/mallcraft/products'),
+                    // ],
+                    // '_ruler_options' => [
+                    //     'itemType' => 'ruler',
+                    // ],
+                    // '_section_options' => [
+                    //     'itemType' => 'section',
+                    //     'icon' => 'icon-triangle',
+                    //     'label' => __('Options'),
+                    // ],
+                    // 'payment' => [
+                    //     'label'         => __('Payment'),
+                    //     'icon'          => 'icon-money',
+                    //     'url'           => Backend::url('crydesign/mallcraft/products'),
+                    // ],
+                    // 'shipping' => [
+                    //     'label'         => __('Shipping'),
+                    //     'icon'          => 'icon-car',
+                    //     'url'           => Backend::url('crydesign/mallcraft/products'),
+                    // ],
                     '_ruler_settings' => [
                         'itemType' => 'ruler',
                     ],
                     'settings' => [
-                        'label'         => 'nav.settings',
-                        'icon'          => 'icon-file-text-o',
-                        'iconSvg'       => 'plugins/crydesign/mallcraft/assets/images/settings.svg',
+                        'label'         => __('Settings'),
+                        'icon'          => 'icon-settings',
                         'url'           => Backend::url('crydesign/mallcraft/settings'),
                     ],
                 ]
@@ -119,8 +171,7 @@ class Plugin extends PluginBase
                 'label' => 'Settings',
                 'description' => 'Manage plugin settings.',
                 'category' => 'MallCraft',
-                'icon' => 'icon-cogs',
-                'iconSvg' => 'plugins/crydesign/mallcraft/assets/images/settings.svg',
+                'icon' => 'icon-settings',
                 'class' => \Crydesign\Mallcraft\Models\Setting::class,
                 'order' => 500,
                 'context' => 'mall_settings',
@@ -130,12 +181,20 @@ class Plugin extends PluginBase
                 'label' => 'Currency',
                 'description' => 'Manage currency settings.',
                 'category' => 'MallCraft',
-                'icon' => 'icon-dollar',
-                'iconSvg' => 'plugins/crydesign/mallcraft/assets/images/products.svg',
+                'icon' => 'icon-money',
                 'order' => 500,
                 'context' => 'mall_settings',
                 'url' => Backend::url('crydesign/mallcraft/currencies')
-            ]
+            ],
+            // 'taxes' => [
+            //     'label' => 'Taxes',
+            //     'description' => 'Manage taxes settings.',
+            //     'category' => 'MallCraft',
+            //     'icon' => 'icon-percent',
+            //     'order' => 500,
+            //     'context' => 'mall_settings',
+            //     'url' => Backend::url('crydesign/mallcraft/currencies')
+            // ]
         ];
     }
 }

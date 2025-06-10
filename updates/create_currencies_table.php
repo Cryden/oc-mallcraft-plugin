@@ -9,12 +9,36 @@ use October\Rain\Database\Updates\Migration;
 /**
  * CreateCurrenciesTable Migration
  *
+ * Creates currencies table for Mallcraft plugin
+ *
+ * Fields:
+ * - id: Auto-incrementing primary key
+ * - active: Boolean flag for currency status
+ * - is_default: Boolean flag for default currency
+ * - name: Currency name (e.g. "US Dollar")
+ * - code: Unique currency code (e.g. "USD")
+ * - symbol: Currency symbol (e.g. "$")
+ * - rate: Exchange rate relative to default currency
+ * - external_id: Optional external system identifier
+ * - sort_order: Optional sorting position
+ * - deleted_at: Soft delete timestamp
+ * - created_at: Creation timestamp
+ * - updated_at: Last update timestamp
+ *
  * @link https://docs.octobercms.com/3.x/extend/database/structure.html
  */
 return new class extends Migration
 {
+    /**
+     * Currencies table name
+     */
     const TABLE_NAME = 'crydesign_mallcraft_currencies';
 
+    /**
+     * Creates the currencies table
+     *
+     * @return void
+     */
     public function up()
     {
         if (Schema::hasTable(self::TABLE_NAME)) {
@@ -39,10 +63,12 @@ return new class extends Migration
     }
 
     /**
-     * down reverses the migration
+     * Drops the currencies table
+     *
+     * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('crydesign_mallcraft_currencies');
+        Schema::dropIfExists(self::TABLE_NAME);
     }
 };

@@ -9,16 +9,45 @@ use October\Rain\Database\Updates\Migration;
 /**
  * CreateCategoriesTable Migration
  *
+ * Creates categories table for Mallcraft plugin
+ *
+ * Fields:
+ * - id: Auto-incrementing primary key
+ * - active: Boolean flag for category status
+ * - name: Category name
+ * - slug: Unique URL-friendly identifier
+ * - code: Optional category code
+ * - external_id: Optional external system identifier
+ * - preview_text: Optional short description
+ * - description: Optional full description
+ * - parent_id: Optional parent category reference
+ * - nest_left: Left boundary for nested set
+ * - nest_right: Right boundary for nested set
+ * - nest_depth: Depth level in category tree
+ * - created_at: Creation timestamp
+ * - updated_at: Last update timestamp
+ *
  * @link https://docs.octobercms.com/3.x/extend/database/structure.html
  */
 return new class extends Migration
 {
     /**
-     * up builds the migration
+     * Categories table name
+     */
+    const TABLE_NAME = 'crydesign_mallcraft_categories';
+
+    /**
+     * Creates the categories table
+     *
+     * @return void
      */
     public function up()
     {
-        Schema::create('crydesign_mallcraft_categories', function (Blueprint $table) {
+        if (Schema::hasTable(self::TABLE_NAME)) {
+            return;
+        }
+
+        Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->boolean('active')->default(0);
             $table->string('name');
@@ -40,10 +69,12 @@ return new class extends Migration
     }
 
     /**
-     * down reverses the migration
+     * Drops the categories table
+     *
+     * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('crydesign_mallcraft_categories');
+        Schema::dropIfExists(self::TABLE_NAME);
     }
 };

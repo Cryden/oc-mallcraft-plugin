@@ -1,15 +1,10 @@
 v1.0.1:
     - First version of mallcraft
-v1.0.2:
-    - Add Categories and Products
-    - create_categories_table.php
+    - create_crydesign_mallcraft_categories_table.php
     - create_products_table.php
-v.1.0.3:
-    - Add Currencies
     - create_currencies_table.php
-v1.0.4:
-    - Add Prices
     - create_prices_table.php
-v1.0.5:
-    - Add Stocks
     - create_stocks_table.php
+v1.0.2:
+    - create_crydesign_mallcraft_category_product_table.php
+    - create_crydesign_mallcraft_category_property_group_table.php
