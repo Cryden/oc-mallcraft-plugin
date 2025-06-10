@@ -8,6 +8,7 @@ use October\Rain\Database\Traits\Sluggable;
 use October\Rain\Database\Traits\Validation;
 use October\Rain\Database\Traits\NestedTree;
 use \October\Rain\Database\Traits\SortableRelation;
+use System\Models\File;
 
 /**
  * Category Model
@@ -66,6 +67,10 @@ class Category extends Model
     ];
 
     public $slugs = ['slug' => 'name'];
+
+    public $attachOne = [
+        'image' => File::class,
+    ];
 
     public $belongsToMany = [
         'products'          => [

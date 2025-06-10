@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Property
+
+# Model Form Field configuration
+form: $/crydesign/mallcraft/models/property/fields.yaml
+
+# Model Class name
+modelClass: Crydesign\Mallcraft\Models\Property
+
+# Default redirect location
+defaultRedirect: crydesign/mallcraft/properties
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: crydesign/mallcraft/properties/update/:id
+    redirectClose: crydesign/mallcraft/properties
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: crydesign/mallcraft/properties
+    redirectClose: crydesign/mallcraft/properties
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

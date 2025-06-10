@@ -113,20 +113,47 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
         return [
-            'settings' => [
+            'catalog_settings' => [
                 'label' => 'Settings',
                 'description' => 'Manage plugin settings.',
-                'category' => 'MallCraft',
+                'category' => 'Catalog',
                 'icon' => 'icon-settings',
                 'class' => \Crydesign\Mallcraft\Models\PluginSetting::class,
                 'order' => 500,
                 'context' => 'mall_settings',
                 'url' => 'settings/update/crydesign/mallcraft/settings'
             ],
+            'properties_group' => [
+                'label' => 'Property groups',
+                'description' => 'Manage property groups.',
+                'category' => 'Catalog',
+                'icon' => 'icon-list',
+                'order' => 500,
+                'context' => 'mall_settings',
+                'url' => Backend::url('crydesign/mallcraft/propertygroups')
+            ],
+            'properties' => [
+                'label' => 'Properties',
+                'description' => 'Manage property',
+                'category' => 'Catalog',
+                'icon' => 'icon-list',
+                'order' => 500,
+                'context' => 'mall_settings',
+                'url' => Backend::url('crydesign/mallcraft/properties')
+            ],
+            'shop_settings' => [
+                'label' => 'Settings',
+                'description' => 'Manage shop settings.',
+                'category' => 'Shop',
+                'icon' => 'icon-settings',
+                'class' => \Crydesign\Mallcraft\Models\PluginSetting::class,
+                'order' => 500,
+                'context' => 'mall_settings',
+            ],
             'currencies' => [
                 'label' => 'Currency',
                 'description' => 'Manage currency settings.',
-                'category' => 'MallCraft',
+                'category' => 'Shop',
                 'icon' => 'icon-money',
                 'order' => 500,
                 'context' => 'mall_settings',

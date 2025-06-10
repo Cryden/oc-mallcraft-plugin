@@ -21,5 +21,6 @@ class Settings extends Controller
         $this->pageTitle = 'backend::lang.mysettings.menu_label';
         $this->vars['items'] = SettingsManager::instance()->listItems('mall_settings');
         $this->bodyClass = 'compact-container';
+        $this->addCss('/plugins/crydesign/mallcraft/assets/css/pages/settings.css', 'global');
     }
 }

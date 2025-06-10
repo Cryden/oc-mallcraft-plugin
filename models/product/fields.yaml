@@ -4,51 +4,76 @@
 
 fields:
     name:
-        label: products.name
+        label: Name
         type: text
         span: left
         required: true
+
     slug:
-        label: products.slug
+        label: Slug
         type: text
         span: right
         required: true
         preset:
             field: name
             type: slug
+
     active:
-        label: products.active
+        label: Active
         type: switch
         span: full
-        comment: products.active.comment
+
 tabs:
     fields:
         category:
-            label: products.category
+            label: Category
             type: relation
-            nameFrom: name
-            tab: products.tab.settings
-        code:
-            label: products.code
-            type: text
             span: left
-            tab: products.tab.settings
+            nameFrom: name
+            tab: Settings
+
         external_id:
-            label: products.external_id
+            label: external_id
             type: text
             span: right
-            tab: products.tab.settings
-            comment: products.external_id.comment
+            tab: Settings
+
+        product_type:
+            label: Product type
+            type: balloon-selector
+            tab: Settings
+
+        offers_section:
+            label: Offers
+            span: full
+            type: section
+            tab: Settings
+            trigger:
+                action: hide
+                field: product_type
+                condition: 'value[single]'
+
+        offers:
+            span: full
+            type: relation
+            tab: Settings
+            controller:
+                label: Product
+                deferredBinding: true
+                popupSize: adaptive
+                list: $/crydesign/mallcraft/models/offer/columns.yaml
+                form: $/crydesign/mallcraft/models/offer/fields.yaml
+            trigger:
+                action: hide
+                field: product_type
+                condition: 'value[single]'
+
         preview_text:
-            label: products.preview_text
+            label: Preview_text
             type: textarea
-            tab: products.tab.description
+            tab: Info
+
         description:
-            label: products.description
+            label: Description
             type: richeditor
-            tab: products.tab.description
-        price:
-            label: Prices and Stock
-            tab: Prices and Stock
-            type: partial
-            path: ~/plugins/crydesign/mallcraft/controllers/products/_prices_and_stocks.htm
+            tab: Info

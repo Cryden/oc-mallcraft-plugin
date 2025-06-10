@@ -4,15 +4,15 @@
 
 columns:
     id:
-        label: ID
+        label: id
         searchable: true
         sortable: false
         width: 5%
     name:
-        label: categories.name
+        label: Name
         searchable: true
         sortable: false
     slug:
-        label: categories.slug
+        label: Slug
         searchable: true
         sortable: false

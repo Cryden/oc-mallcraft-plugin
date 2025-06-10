@@ -53,7 +53,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->integer('category_id')->nullable()->unsigned();
             $table->string('external_id')->nullable();
-            $table->string('inventory_management_method')->default('single');
+            $table->string('product_type')->default('single');
             $table->integer('group_by_property_id')->nullable();
             $table->text('preview_text')->nullable();
             $table->text('description')->nullable();

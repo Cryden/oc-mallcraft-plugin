@@ -1,4 +1,6 @@
-<?php namespace Crydesign\Mallcraft\Models;
+<?php
+
+namespace Crydesign\Mallcraft\Models;
 
 use Model;
 
@@ -14,7 +16,7 @@ class Offer extends Model
     /**
      * @var string table name
      */
-    public $table = 'crydesign_mallcraft_offers';
+    public $table = 'mallcraft_offers';
 
     /**
      * @var array rules for validation

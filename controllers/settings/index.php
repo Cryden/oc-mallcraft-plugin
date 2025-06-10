@@ -9,7 +9,7 @@
         <div class="settings-items row">
 
             <?php foreach ($items as $item) : ?>
-                <div class="settings-item col-xs-12 col-md-6 col-lg-4">
+                <div class="settings-item col-xs-12 col-md-6 col-lg-4 p-4">
                     <a href="<?= $item->url ?>">
                         <div class="item-icon">
                             <?php if ($item->iconSvg): ?>

@@ -16,7 +16,7 @@ class Price extends Model
     /**
      * @var string table name
      */
-    public $table = 'crydesign_mallcraft_prices';
+    public $table = 'mallcraft_prices';
 
     /**
      * @var array rules for validation

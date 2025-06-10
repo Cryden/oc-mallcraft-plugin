@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/crydesign/mallcraft/models/category/columns.yaml
+list: $/crydesign/mallcraft/models/propertygroup/columns.yaml
 
 # Model Class name
-modelClass: Crydesign\Mallcraft\Models\Category
+modelClass: Crydesign\Mallcraft\Models\PropertyGroup
 
 # List Title
-title: Manage Categories
+title: Manage Property Groups
 
 # Link URL for each record
-recordUrl: crydesign/mallcraft/categories/update/:id
+recordUrl: crydesign/mallcraft/propertygroups/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records
@@ -45,9 +45,3 @@ toolbar:
     # Search widget configuration
     search:
         prompt: backend::lang.list.search_prompt
-
-structure:
-    showTree: true
-    treeExpanded: false
-    showReorder: true
-    maxDepth: 10

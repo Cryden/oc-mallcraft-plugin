@@ -56,6 +56,7 @@ return new class extends Migration
             $table->string('external_id')->nullable();
             $table->text('preview_text')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('inherit_property_groups')->nullable()->default(0);
             $table->integer('parent_id')->nullable()->unsigned();
             $table->integer('nest_left')->nullable()->unsigned();
             $table->integer('nest_right')->nullable()->unsigned();

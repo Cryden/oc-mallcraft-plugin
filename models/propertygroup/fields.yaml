@@ -1,8 +1,24 @@
-# ===================================
-#  Form Field Definitions
-# ===================================
-
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: 'offline.mall::lang.common.name'
+        span: auto
+        type: text
+    display_name:
+        label: 'offline.mall::lang.common.display_name'
+        span: auto
+        type: text
+    description:
+        label: 'offline.mall::lang.product.description'
+        span: auto
+        type: text
+
+    properties:
+        span: full
+        context:
+            - update
+            - preview
+        type: relation
+        controller:
+            label: Property
+            list: $/crydesign/mallcraft/models/property/columns.yaml
+            form: $/crydesign/mallcraft/models/property/fields.yaml

@@ -4,45 +4,78 @@
 
 fields:
     active:
-        label: categories.active
+        label: is active
         type: switch
         span: full
+
     name:
-        label: categories.name
+        label: name
         type: text
         span: left
         required: true
+
     slug:
-        label: categories.slug
+        label: slug
         type: text
         span: right
         required: true
         preset:
             field: name
             type: slug
+
 tabs:
     fields:
         parent:
-            label: categories.parent
+            label: parent
             type: relation
             nameFrom: name
-            tab: categories.tab.settings
+            tab: Settings
+
         code:
-            label: categories.code
+            label: code
             type: text
-            span: left
-            tab: categories.tab.settings
+            comment: Code for category
+            tab: Settings
+
         external_id:
-            label: categories.external_id
+            label: external_id
             type: text
-            span: right
-            comment: categories.external_id.comment
-            tab: categories.tab.settings
+            comment: External ID for category
+            tab: Settings
+
+        image:
+            label: image
+            type: fileupload
+            tab: Info
+
         preview_text:
-            label: categories.preview_text
+            label: preview_text
             type: textarea
-            tab: categories.tab.description
+            tab: Info
+
         description:
-            label: categories.description
+            label: description
             type: richeditor
-            tab: categories.tab.description
+            tab: Info
+
+        inherit_property_groups:
+            label: Inherit Property Groups
+            span: auto
+            context: update
+            dependsOn: parent
+            type: switch
+            tab: Property Groups
+
+        property_groups:
+            span: full
+            type: relation
+            controller:
+                label: Property
+                list: $/crydesign/mallcraft/models/property/columns.yaml
+                form: $/crydesign/mallcraft/models/property/fields.yaml
+            context: update
+            trigger:
+                action: hide
+                field: inherit_property_groups
+                condition: checked
+            tab: Property Groups

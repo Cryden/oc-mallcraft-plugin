@@ -13,7 +13,7 @@ use October\Rain\Database\Updates\Migration;
  */
 return new class extends Migration
 {
-    const TABLE_NAME = 'crydesign_mallcraft_offers';
+    const TABLE_NAME = 'mallcraft_offers';
     /**
      * up builds the migration
      */
@@ -26,7 +26,9 @@ return new class extends Migration
         Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->id();
             $table->integer('product_id')->unsigned();
-            $table->string('user_defined_id')->nullable();
+            $table->string('name')->nullable();
+            $table->string('slug')->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

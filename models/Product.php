@@ -17,7 +17,7 @@ class Product extends Model
     use Sluggable;
     use Validation;
 
-    public $table = 'crydesign_mallcraft_products';
+    public $table = 'mallcraft_products';
 
     public $implement = [
         '@RainLab.Translate.Behaviors.TranslatableModel',
@@ -32,7 +32,7 @@ class Product extends Model
 
     public $rules = [
         'name' => 'required',
-        'slug' => 'required|unique:crydesign_mallcraft_categories',
+        'slug' => 'required|unique:mallcraft_products',
     ];
 
     public $slugs = ['slug' => 'name'];
@@ -41,17 +41,15 @@ class Product extends Model
         'category' => [Category::class],
     ];
 
-    public $morphOne = [
-        'quantity' => [
-            Stock::class,
-            'name'       => 'item',
-        ],
+    public $hasMany = [
+        'offers' => [Offer::class],
     ];
 
-    public $morphMany = [
-        'prices' => [
-            Price::class,
-            'name'       => 'item',
-        ],
-    ];
+    public function getProductTypeOptions()
+    {
+        return [
+            'single'  => __('single'),
+            'offers' => __('offers'),
+        ];
+    }
 }

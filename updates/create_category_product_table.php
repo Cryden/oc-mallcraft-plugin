@@ -41,12 +41,12 @@ return new class extends Migration
 
             $table->foreign('product_id')
                 ->references('id')
-                ->on('crydesign_mallcraft_products')
+                ->on('mallcraft_products')
                 ->onDelete('cascade');
 
             $table->foreign('category_id')
                 ->references('id')
-                ->on('crydesign_mallcraft_categories')
+                ->on('mallcraft_categories')
                 ->onDelete('cascade');
         });
     }

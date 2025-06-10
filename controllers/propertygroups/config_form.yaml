@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Property Group
+
+# Model Form Field configuration
+form: $/crydesign/mallcraft/models/propertygroup/fields.yaml
+
+# Model Class name
+modelClass: Crydesign\Mallcraft\Models\PropertyGroup
+
+# Default redirect location
+defaultRedirect: crydesign/mallcraft/propertygroups
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: crydesign/mallcraft/propertygroups/update/:id
+    redirectClose: crydesign/mallcraft/propertygroups
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: crydesign/mallcraft/propertygroups
+    redirectClose: crydesign/mallcraft/propertygroups
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title
