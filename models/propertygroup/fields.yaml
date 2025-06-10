@@ -22,3 +22,5 @@ fields:
             label: Property
             list: $/crydesign/mallcraft/models/property/columns.yaml
             form: $/crydesign/mallcraft/models/property/fields.yaml
+            pivot:
+                form: $/crydesign/mallcraft/models/property/fields_pivot.yaml
