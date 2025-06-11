@@ -36,7 +36,7 @@ return new class extends Migration
             $table->increments('id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->integer('category_id')->unsigned();
-            $table->integer('sort_order')->unsigned();
+            $table->integer('sort_order')->nullable()->unsigned();
             $table->timestamps();
 
             $table->foreign('product_id')

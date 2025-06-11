@@ -29,19 +29,21 @@ tabs:
             label: parent
             type: relation
             nameFrom: name
-            tab: Settings
+            tab: Info
 
         code:
             label: code
             type: text
+            span: left
             comment: Code for category
-            tab: Settings
+            tab: Info
 
         external_id:
             label: external_id
             type: text
+            span: right
             comment: External ID for category
-            tab: Settings
+            tab: Info
 
         image:
             label: image
@@ -64,18 +66,39 @@ tabs:
             context: update
             dependsOn: parent
             type: switch
-            tab: Property Groups
+            tab: Properties
+            trigger:
+                action: show
+                field: parent
+                condition: value[*]
 
         property_groups:
             span: full
             type: relation
             controller:
-                label: Property
-                list: $/crydesign/mallcraft/models/property/columns.yaml
-                form: $/crydesign/mallcraft/models/property/fields.yaml
+                label: Property groups
+                list: $/crydesign/mallcraft/models/propertygroup/columns.yaml
+                form: $/crydesign/mallcraft/models/propertygroup/fields.yaml
             context: update
             trigger:
                 action: hide
                 field: inherit_property_groups
                 condition: checked
-            tab: Property Groups
+            tab: Properties
+
+        products:
+            span: full
+            type: relation
+            controller:
+                label: Products
+                view:
+                    list: $/crydesign/mallcraft/models/product/columns.yaml
+                    toolbarButtons: create|add|delete
+                    showSetup: true
+                    structure:
+                        showTree: false
+                        showReorder: true
+                        showSorting: false
+                form: $/crydesign/mallcraft/models/product/fields.yaml
+            context: update
+            tab: Products

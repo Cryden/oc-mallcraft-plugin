@@ -32,6 +32,13 @@ tabs:
             nameFrom: name
             tab: Settings
 
+        additional_category:
+            label: Additional Category
+            type: relation
+            span: left
+            nameFrom: name
+            tab: Settings
+
         external_id:
             label: external_id
             type: text
@@ -47,7 +54,7 @@ tabs:
             label: Offers
             span: full
             type: section
-            tab: Settings
+            tab: Offers
             trigger:
                 action: hide
                 field: product_type
@@ -56,7 +63,7 @@ tabs:
         offers:
             span: full
             type: relation
-            tab: Settings
+            tab: Offers
             controller:
                 label: Product
                 deferredBinding: true

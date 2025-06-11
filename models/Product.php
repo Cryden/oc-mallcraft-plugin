@@ -37,8 +37,17 @@ class Product extends Model
 
     public $slugs = ['slug' => 'name'];
 
-    public $belongsTo = [
+    public $hasOne = [
         'category' => [Category::class],
+    ];
+
+    public $belongsToMany = [
+        'additional_category' => [
+            Category::class,
+            'table'      => 'mallcraft_category_product',
+            'key'        => 'product_id',
+            'otherKey'   => 'category_id',
+        ],
     ];
 
     public $hasMany = [
