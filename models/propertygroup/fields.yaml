@@ -1,18 +1,21 @@
 fields:
     name:
-        label: 'offline.mall::lang.common.name'
-        span: auto
-        type: text
-    display_name:
-        label: 'offline.mall::lang.common.display_name'
-        span: auto
-        type: text
-    description:
-        label: 'offline.mall::lang.product.description'
+        label: Name
         span: auto
         type: text
 
+    display_name:
+        label: Display name
+        span: auto
+        type: text
+
+    description:
+        label: Description
+        span: full
+        type: text
+
     properties:
+        label: Properties
         span: full
         context:
             - update
@@ -20,7 +23,14 @@ fields:
         type: relation
         controller:
             label: Property
-            list: $/crydesign/mallcraft/models/property/columns.yaml
+            view:
+                list: $/crydesign/mallcraft/models/property/columns_pivot.yaml
+                toolbarButtons: create|add|delete
+                showSetup: true
+                structure:
+                    showTree: false
+                    showReorder: true
+                    showSorting: false
             form: $/crydesign/mallcraft/models/property/fields.yaml
             pivot:
                 form: $/crydesign/mallcraft/models/property/fields_pivot.yaml

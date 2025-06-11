@@ -1,0 +1,31 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: false
+
+    type:
+        label: Property Type
+        searchable: true
+        sortable: false
+        type: partial
+        path: $/crydesign/mallcraft/controllers/propertygroups/partials/_type.htm
+
+    unit:
+        label: Unit
+        type: text
+        searchable: true
+        sortable: false
+        default: --
+
+    pivot[filter_type]:
+        label: Filter Type
+        sortable: false
+        type: partial
+        path: $/crydesign/mallcraft/controllers/propertygroups/partials/_filter_type.htm
+
+    pivot[use_for_offers]:
+        label: Use for Offers
+        sortable: false
+        type: switch

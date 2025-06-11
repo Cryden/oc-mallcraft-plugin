@@ -1,33 +1,48 @@
 fields:
     name:
-        label: 'offline.mall::lang.common.name'
-        oc.commentPosition: ''
-        span: auto
-        type: text
-    type:
-        label: 'offline.mall::lang.custom_fields.type'
-        oc.commentPosition: ''
-        span: auto
-        type: dropdown
-    unit:
-        label: 'offline.mall::lang.common.unit'
-        oc.commentPosition: ''
-        span: auto
-        type: text
-    options:
-        label: 'offline.mall::lang.common.options'
-        oc.commentPosition: ''
-        prompt: 'Add new item'
+        label: Name
         span: full
+        type: text
+        required: true
+
+    type:
+        label: Property Type
+        span: left
+        type: dropdown
+
+    unit:
+        label: Unit
+        span: right
+        type: text
+
+    options:
+        type: datatable
+        label: Options
+        adding: true
+        deleting: true
+        columns:
+            value:
+                title: Options
+                type: string
+        recordsPerPage: false
+        searching: false
         trigger:
             action: show
             field: type
             condition: 'value[dropdown]'
-        type: repeater
-        form:
-            fields:
-                value:
-                    label: 'offline.mall::lang.common.option'
-                    oc.commentPosition: ''
-                    span: full
-                    type: text
+
+    # options:
+    #     label: Options
+    #     prompt: 'Add new option'
+    #     span: full
+    #     trigger:
+    #         action: show
+    #         field: type
+    #         condition: 'value[dropdown]'
+    #     type: repeater
+    #     form:
+    #         fields:
+    #             value:
+    #                 label: Option
+    #                 span: full
+    #                 type: text

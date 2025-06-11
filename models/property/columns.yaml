@@ -1,23 +1,19 @@
 columns:
     name:
-        label: 'offline.mall::lang.common.name'
+        label: Name
         type: text
         searchable: true
         sortable: false
+
     type:
-        label: 'offline.mall::lang.custom_fields.type'
+        label: Property Type
         searchable: true
         sortable: false
-        type: partial
-        path: $/offline/mall/models/property/_type.htm
+        # type: partial
+        # path: $/offline/mall/models/property/_type.htm
+
     unit:
-        label: 'offline.mall::lang.common.unit'
+        label: Unit
         type: text
         searchable: true
         sortable: false
-    created_at:
-        label: 'offline.mall::lang.common.created_at'
-        type: datetime
-        searchable: true
-        sortable: false
-        invisible: true

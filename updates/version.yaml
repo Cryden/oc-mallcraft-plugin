@@ -10,3 +10,5 @@ v1.0.1:
     - create_property_groups_table.php
     - create_category_property_group_table.php
     - create_property_property_group_table.php
+v1.0.2:
+    - create_property_values_table.php
